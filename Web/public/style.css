@@ -1,0 +1,23 @@
+/* reset & full-screen */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 100%; height: 100%; overflow: hidden; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+
+/* wallpaper */
+.bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(0.4); z-index: 0; }
+
+/* window */
+.window { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 90vw; max-width: 1200px; height: 70vh; max-height: 800px; background: #2e2e2e; border-radius: 8px; box-shadow: 0 16px 32px rgba(0,0,0,0.6); display: flex; flex-direction: column; overflow: hidden; z-index: 1; color: #ddd; }
+.title-bar { height: 32px; background: #1e1e1e; display: flex; align-items: center; padding: 0 12px; }
+.title-bar .circle { width: 12px; height: 12px; border-radius: 50%; margin-right: 8px; box-shadow: inset 0 0 0 1px rgba(0,0,0,0.5); }
+.circle.close { background: #ff5f57; }
+.circle.min   { background: #ffbd2e; }
+.circle.max   { background: #28c840; }
+.title-bar #backBtn { margin-left: 8px; background: none; border: none; color: #ccc; font-size: 0.9rem; cursor: pointer; }
+.title-bar #backBtn:disabled { color: #555; cursor: default; }
+.title-bar .path { margin-left: 16px; font-size: 0.9rem; color: #ccc; }
+
+.content { flex: 1; padding: 16px; display: flex; flex-wrap: wrap; gap: 24px; align-content: flex-start; overflow: auto; background: #242424; }
+.folder, .file { width: 100px; text-align: center; cursor: pointer; }
+.folder svg, .file svg { width: 64px; height: 64px; fill: #eee; margin-bottom: 4px; }
+.folder span, .file span { display: block; word-break: break-word; font-size: 0.9rem; color: #eee; }
+.folder:hover svg, .file:hover svg { transform: scale(1.1); transition: transform 0.15s; }
